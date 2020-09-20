@@ -5,6 +5,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { loader } = require("mini-css-extract-plugin");
 
 module.exports = {
+  mode: "development",
+  devtool: "source-map",
   entry: "./src/javascripts/main.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -12,6 +14,18 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.js/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     {
+      //       loader: "babel-loader",
+      //       options: {
+      //         preset: [["@babel/preset-env", { targets: "> 0.25%, not dead" }]],
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.(css|sass|scss)/,
         use: [
@@ -20,6 +34,9 @@ module.exports = {
           },
           {
             loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
           },
           {
             loader: "sass-loader",
