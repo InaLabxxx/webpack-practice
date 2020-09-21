@@ -28601,6 +28601,43 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./src/javascripts/Alert.tsx":
+/*!***********************************!*\
+  !*** ./src/javascripts/Alert.tsx ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Alert = function (props) {
+    var message = props.message;
+    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { style: { backgroundColor: 'green', color: '#fff', padding: '1em' } }, message));
+};
+/* harmony default export */ __webpack_exports__["default"] = (Alert);
+
+
+/***/ }),
+
+/***/ "./src/javascripts/add.ts":
+/*!********************************!*\
+  !*** ./src/javascripts/add.ts ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (a, b) {
+    return "Result is " + (a + b);
+});
+
+
+/***/ }),
+
 /***/ "./src/javascripts/main.js":
 /*!*********************************!*\
   !*** ./src/javascripts/main.js ***!
@@ -28614,10 +28651,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _my_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./my.js */ "./src/javascripts/my.js");
 /* harmony import */ var _stylesheets_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../stylesheets/main.scss */ "./src/stylesheets/main.scss");
 /* harmony import */ var _stylesheets_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_stylesheets_main_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _add_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add.ts */ "./src/javascripts/add.ts");
 
 
 
-console.log("webpack!");
+
+console.log(Object(_add_ts__WEBPACK_IMPORTED_MODULE_3__["default"])(3, 9));
+console.log('webpack!');
 Object(_my_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
 /***/ }),
@@ -28665,6 +28705,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Alert_tsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Alert.tsx */ "./src/javascripts/Alert.tsx");
+
 
 
 
@@ -28673,7 +28715,9 @@ var App = function App(props) {
     style: {
       color: '#000'
     }
-  }, "Hello, React App!");
+  }, "Hello, React App!", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_Alert_tsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    message: "Success!"
+  }));
 };
 
 var reactRoot = document.getElementById('react-root');
